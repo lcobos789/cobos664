@@ -1,17 +1,3 @@
-all_classes = ['Human-Information Behavior','Research Mthds/Law Lit','Strategic Leadership','Conservation and Preservation','Info Services & Resources', 'Information Arch/Inter Design','Information Professions','Acad Libraries and Scholarly','Usability Theory & Practice','Mgmt of Archives/Sp Collection','Government Info Sources','Library Media Centers','Mgmt of Archives/Sp Collection','Information Science Research']
-print(all_classes)
-print(all_classes[2])
-print(all_classes[3])
-
-schedule = {
-	"monday" :   ['Human-Information Behavior','Information Professions','Research Mthds/Law Lit','Strategic Leadership','Conservation and Preservation','Info Services & Resources'],
-	"tuesday":   ['Information Arch/Inter Design','Information Professions','Acad Libraries and Scholarly','Info Services & Resources'],
-	"wednesday": ['Info Services & Resources','Usability Theory & Practice','Mgmt of Archives/Sp Collection','Government Info Sources','Library Media Centers','Mgmt of Archives/Sp Collection'],
-	"thursday": ['Information Science Research','Information Professions','Information Professions'],
-}
-print(schedule["tuesday"])
-print(schedule ["tuesday"][1])
-
 schedule = {
 	"monday" : {
 
@@ -175,38 +161,32 @@ schedule = {
 
 
 
+#print the name of the first class on Wednesday in room 612, with the name of the prof and when the start is.
+#please note my output formate: <class name> - <prof name> - <start time>
 
-print(schedule ["wednesday"] [612])
+#output sample (not the correct output:
 
-
-
-
-
-
-
+# ❯ python3 pratt_schedule3.py
+# Human-Information Behavior - Pattuelli - 6.5
 
 
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if "wednesday" in schedule:
+    if 612 in schedule["wednesday"]:
+        classes_in_room_612_wednesday = schedule["wednesday"][612]
+        
+        if classes_in_room_612_wednesday:
+            first_class = classes_in_room_612_wednesday[0]
+        
+            class_name = first_class["class"]
+            professor_name = first_class["prof"]
+            start_time = first_class["start"]
+            
+            print(f"{class_name} - {professor_name} - {start_time} hours")
+        else:
+            print("No classes scheduled in room 612 on Wednesday.")
+    else:
+        print("Room 612 is not scheduled on Wednesday.")
+else:
+    print("Wednesday is not in the schedule.")
 
 
