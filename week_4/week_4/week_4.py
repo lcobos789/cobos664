@@ -12,11 +12,10 @@ with open ('Artworks.csv') as artworks_file:
       #write my artwork to that file
       if nat_files.get(nat) is None:
         with open("art_nationalities_files/{nat}.csv", "w") as nat_files:
-
-      nat_dict_writer = csv.DictWriter(nat_files, artworks_csv_file.fieldnames)
-      nat_dict_writer .writeheader()
-      nat_dict_writer .writerow(artwork)
-      nat_files[nat] = True
+           nat_dict_writer = csv.DictWriter(nat_files, artworks_csv_file.fieldnames)
+           nat_dict_writer .writeheader()
+           nat_dict_writer .writerow(artwork)
+           nat_files[nat] = True
     else:
        with open(f"art_nationalities_files/{nat}.csv", "a") as nat_files:
           nat_dict_writer = csv.DictWriter(nat_files, artworks_csv_file.fieldnames)
