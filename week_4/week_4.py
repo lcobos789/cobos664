@@ -1,10 +1,10 @@
 import csv
 import os
 
-with open('week_4/Artworks.csv', 'r', newline='') as csv_file:
+with open('Artworks.csv', 'r', newline='') as csv_file:
     artworks_csv_file = csv.DictReader(csv_file)
 
-    os.makedirs('week_4/res', exist_ok=True)
+    os.makedirs('res', exist_ok=True)
 
 nat_files = {}
 
